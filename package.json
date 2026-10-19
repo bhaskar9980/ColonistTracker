@@ -1,0 +1,12 @@
+{
+  "name": "colonist-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome extension: card counter and win metrics for colonist.io",
+  "scripts": {
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1"
+  }
+}

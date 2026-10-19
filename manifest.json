@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Colonist Tracker",
+  "version": "1.2.0",
+  "minimum_chrome_version": "111",
+  "description": "Card counting and win-rate metrics for colonist.io: every player's hand (with probabilities for hidden steals), dev cards, victory points, dice luck, robber targets and settlement spot advice.",
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "action": {
+    "default_title": "Open the Colonist Tracker window"
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://colonist.io/*", "https://*.colonist.io/*"],
+      "js": ["src/msgpack.js", "src/inject.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://colonist.io/*", "https://*.colonist.io/*"],
+      "js": [
+        "src/constants.js",
+        "src/tokenizer.js",
+        "src/parser.js",
+        "src/worlds.js",
+        "src/game.js",
+        "src/board.js",
+        "src/advisor.js",
+        "src/panel.js",
+        "src/main.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

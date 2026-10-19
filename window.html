@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colonist Tracker</title>
+  <link rel="icon" href="icons/48.png">
+  <style>
+    html, body { margin: 0; height: 100%; background: #1c2230; color: #eef1f6; font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif; }
+    #waiting { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; padding: 24px; }
+    #waiting h1 { font-size: 18px; margin: 0; }
+    #waiting p { color: #a3adc2; max-width: 46ch; margin: 0; line-height: 1.5; }
+    #waiting[hidden] { display: none; }
+  </style>
+</head>
+<body>
+  <div id="waiting">
+    <h1>Colonist Tracker</h1>
+    <p>Waiting for a colonist.io tab. Keep the game open in another window; this window mirrors the tracker live and can be maximised on any screen.</p>
+  </div>
+  <script src="src/constants.js"></script>
+  <script src="src/panel.js"></script>
+  <script src="src/window.js"></script>
+</body>
+</html>
